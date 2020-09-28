@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -36,8 +37,10 @@ public class registro extends AppCompatActivity {
     Integer check1=0;
     Integer check2=0;
     Integer check3=0;
-
     TextView prubas;
+    Boolean presionado=false;
+    float sx = (float) 1.05;
+    float sx1 = (float) 1.2;
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
@@ -47,7 +50,7 @@ public class registro extends AppCompatActivity {
         setContentView(R.layout.activity_registro);
         declaraciones();
 
-        registro.setOnClickListener(new View.OnClickListener() {
+        /*registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String phoneE = phone.getText().toString();
@@ -57,26 +60,100 @@ public class registro extends AppCompatActivity {
                 phoneE = phoneE.replace("-", "");
                 checarDatos(phoneE,emailE,passE);
             }
-        });
+        });*/
 
-        terminos.setOnClickListener(new View.OnClickListener() {
+        registro.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                    Termino();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (!presionado) {
+                            presionado = true;
+                            registro.setScaleX(sx1);
+                            registro.setScaleY(sx1);
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        registro.setScaleX(1);
+                        registro.setScaleY(1);
+
+                        String phoneE = phone.getText().toString();
+                        String emailE = email.getText().toString();
+                        String passE = password.getText().toString();
+                        phoneE = phoneE.replace(" ", "");
+                        phoneE = phoneE.replace("-", "");
+                        checarDatos(phoneE,emailE,passE);
+
+                        presionado = false;
+                        break;
+                }
+                return true;
             }
         });
 
-        politicas.setOnClickListener(new View.OnClickListener() {
+        terminos.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                Politica();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (!presionado) {
+                            presionado = true;
+                            terminos.setScaleX(sx);
+                            terminos.setScaleY(sx);
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        terminos.setScaleX(1);
+                        terminos.setScaleY(1);
+                        Termino();
+                        presionado = false;
+                        break;
+                }
+                return true;
             }
         });
 
-        ginaga.setOnClickListener(new View.OnClickListener() {
+        politicas.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                Ginaga();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (!presionado) {
+                            presionado = true;
+                            politicas.setScaleX(sx);
+                            politicas.setScaleY(sx);
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        politicas.setScaleX(1);
+                        politicas.setScaleY(1);
+                        Politica();
+                        presionado = false;
+                        break;
+                }
+                return true;
+            }
+        });
+
+        ginaga.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (!presionado) {
+                            presionado = true;
+                            ginaga.setScaleX(sx);
+                            ginaga.setScaleY(sx);
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        ginaga.setScaleX(1);
+                        ginaga.setScaleY(1);
+                        Ginaga();
+                        presionado = false;
+                        break;
+                }
+                return true;
             }
         });
     }
@@ -192,6 +269,8 @@ public class registro extends AppCompatActivity {
         myRef.child(a).child("PAGO").setValue("NO");
     }
     public void onBackPressed () {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivityForResult(intent, 0);
         finishAndRemoveTask();
     }
     public void Termino (){

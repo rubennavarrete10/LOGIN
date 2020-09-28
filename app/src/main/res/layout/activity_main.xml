@@ -31,11 +31,13 @@
         android:layout_marginTop="4dp"
         android:text="¿Has olvidado tu contraseña?"
         android:textColor="#2DCCD3"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/layoutlinear"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagelogin"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.091" />
 
     <LinearLayout
         android:id="@+id/layoutlinear"
@@ -63,6 +65,7 @@
             android:layout_height="wrap_content"
             android:text=" Registrate"
             android:textColor="#2DCCD3"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/textView4"
             tools:layout_editor_absoluteY="2dp" />
     </LinearLayout>
@@ -71,24 +74,29 @@
         android:id="@+id/logoview"
         android:layout_width="212dp"
         android:layout_height="124dp"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/layoutlinear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.044"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+        app:srcCompat="@drawable/bitacore" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imagelogin"
-        android:layout_width="215dp"
-        android:layout_height="39dp"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/layoutlinear"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="0.062"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/sing" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
@@ -96,6 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
+        android:gravity="center_vertical"
         app:layout_constraintBottom_toTopOf="@+id/layoutlinear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
@@ -118,15 +127,15 @@
 
         <ImageButton
             android:id="@+id/showbutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="36dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/passwordtext"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@android:drawable/ic_menu_gallery" />
+            app:srcCompat="@drawable/pass2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

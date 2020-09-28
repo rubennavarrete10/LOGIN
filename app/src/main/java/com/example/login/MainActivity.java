@@ -8,14 +8,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     public static final String SHARED_PREFS = "sharedPrefs";
-    ImageButton login;
+    ImageView login;
     ImageButton showhide;
     Integer showhidebandera=0;
     TextView olvidadocontra;
@@ -36,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
     EditText phone;
     Intent intent;
     Integer c=0;
-    String passG="NADA";
+    Boolean presionado=false;
+    float sx = (float) 1.2;
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
@@ -46,16 +51,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         declaraciones();
 
-        login.setOnClickListener(new View.OnClickListener() {
+        login.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                /*intent = new Intent(v.getContext(), MainActivity.class);
-                startActivityForResult(intent, 0);*/
-                String user = phone.getText().toString();
-                String password = pass.getText().toString();
-                validar(user,password);
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (!presionado) {
+                            presionado = true;
+                            login.setScaleX(sx);
+                            login.setScaleY(sx);
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        login.setScaleX(1);
+                        login.setScaleY(1);
+                        String user = phone.getText().toString();
+                        String password = pass.getText().toString();
+                        validar(user,password);
+                        presionado = false;
+                        break;
+                }
+                return true;
             }
         });
+
         showhide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,34 +82,64 @@ public class MainActivity extends AppCompatActivity {
                     //pon ojo abierto y muestra password
                     showhidebandera = 1;
                     pass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    int id = getResources().getIdentifier("com.example.login:drawable/" + "pass1", null, null);
+                    showhide.setImageResource(id);
                 }
                 else{
                     //pon ojo bloqueado y oculta password
                     showhidebandera = 0;
                     pass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    int id = getResources().getIdentifier("com.example.login:drawable/" + "pass2", null, null);
+                    showhide.setImageResource(id);
                 }
 
             }
         });
-        olvidadocontra.setOnClickListener(new View.OnClickListener() {
+        olvidadocontra.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                intent = new Intent(v.getContext(), olvidadocontrasena.class);
-                startActivityForResult(intent, 0);
-
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (!presionado) {
+                            presionado = true;
+                            olvidadocontra.setTextColor(Color.parseColor("#757575"));
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        olvidadocontra.setTextColor(Color.parseColor("#2DCCD3"));
+                        intent = new Intent(v.getContext(), olvidadocontrasena.class);
+                        startActivityForResult(intent, 0);
+                        presionado = false;
+                        break;
+                }
+                return true;
             }
         });
-        registrarse.setOnClickListener(new View.OnClickListener() {
+
+        registrarse.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                intent = new Intent(v.getContext(), registro.class);
-                startActivityForResult(intent, 0);
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (!presionado) {
+                            presionado = true;
+                            registrarse.setTextColor(Color.parseColor("#757575"));
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        registrarse.setTextColor(Color.parseColor("#2DCCD3"));
+                        intent = new Intent(v.getContext(), registro.class);
+                        startActivityForResult(intent, 0);
+                        presionado = false;
+                        break;
+                }
+                return true;
             }
         });
     }
 
     public void declaraciones() {
-        login =(ImageButton) findViewById(R.id.imagelogin);
+        login =(ImageView) findViewById(R.id.imagelogin);
         showhide =(ImageButton) findViewById(R.id.showbutton);
         olvidadocontra = (TextView)findViewById(R.id.recordarpassword);
         registrarse = (TextView)findViewById(R.id.registrarse);
@@ -154,8 +203,9 @@ public class MainActivity extends AppCompatActivity {
             alerta1(msj);
         }
     }
+
     public void onBackPressed () {
-        finishAndRemoveTask();
+        finishAffinity();
     }
     public void alerta(String msj){
         AlertDialog.Builder builder = new AlertDialog.Builder((MainActivity.this));

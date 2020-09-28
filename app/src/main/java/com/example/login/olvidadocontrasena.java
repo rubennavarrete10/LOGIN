@@ -13,6 +13,7 @@ import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -42,6 +43,8 @@ public class olvidadocontrasena extends AppCompatActivity {
     Session session = null;
     ProgressDialog pdialog = null;
     Context context = null;
+    Boolean presionado=false;
+    float sx = (float) 1.1;
 
 
     @SuppressLint("SourceLockedOrientationActivity")
@@ -55,18 +58,48 @@ public class olvidadocontrasena extends AppCompatActivity {
         correo = (EditText) findViewById(R.id.editCorreo);
         ginaga = (TextView) findViewById(R.id.textGinaga1);
 
-        senCorreo.setOnClickListener(new View.OnClickListener() {
+        senCorreo.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                String direccion = correo.getText().toString();
-                sendcorreo(direccion);
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (!presionado) {
+                            presionado = true;
+                            senCorreo.setScaleX(sx);
+                            senCorreo.setScaleY(sx);
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        senCorreo.setScaleX(1);
+                        senCorreo.setScaleY(1);
+                        String direccion = correo.getText().toString();
+                        sendcorreo(direccion);
+                        presionado = false;
+                        break;
+                }
+                return true;
             }
         });
 
-        ginaga.setOnClickListener(new View.OnClickListener() {
+        ginaga.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                Ginaga();
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (!presionado) {
+                            presionado = true;
+                            ginaga.setScaleX(sx);
+                            ginaga.setScaleY(sx);
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        ginaga.setScaleX(1);
+                        ginaga.setScaleY(1);
+                        Ginaga();
+                        presionado = false;
+                        break;
+                }
+                return true;
             }
         });
 
@@ -154,6 +187,8 @@ public class olvidadocontrasena extends AppCompatActivity {
 
 
     public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivityForResult(intent, 0);
         finishAndRemoveTask();
     }
 
