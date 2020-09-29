@@ -1,25 +1,41 @@
 package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompatSideChannelService;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
+import android.net.NetworkCapabilities;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.text.Html;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Properties;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -30,7 +46,9 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class olvidadocontrasena extends AppCompatActivity {
+    String APP = "LOGIN";
     public static final String SHARED_PREFS = "sharedPrefs";
+    private static final String TAG = "ERROR";
     ImageButton senCorreo;
     EditText correo;
     TextView ginaga;
@@ -45,7 +63,9 @@ public class olvidadocontrasena extends AppCompatActivity {
     Context context = null;
     Boolean presionado=false;
     float sx = (float) 1.1;
+    String sinEternet="NO";
 
+    Timer tiempo=new Timer();
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
@@ -57,6 +77,7 @@ public class olvidadocontrasena extends AppCompatActivity {
         senCorreo = (ImageButton) findViewById(R.id.sendcorreo);
         correo = (EditText) findViewById(R.id.editCorreo);
         ginaga = (TextView) findViewById(R.id.textGinaga1);
+
 
         senCorreo.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -161,7 +182,7 @@ public class olvidadocontrasena extends AppCompatActivity {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress("ginagaappservice@gmail.com"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(dirrecioncorreo));
-            message.setSubject("CONTRASEÑA");
+            message.setSubject("CONTRASEÑA DE LA APLICACION: "+APP);
             message.setText("TU CONTRASEÑA ES: " + contrasena);
             new SendMail().execute(message);
 
@@ -202,38 +223,63 @@ public class olvidadocontrasena extends AppCompatActivity {
 
         @Override
         protected String doInBackground(Message... messages) {
-            try {
-                Transport.send(messages[0]);
-                return "EMAIL ENVIADO";
-            } catch (MessagingException e) {
-                e.printStackTrace();
+            if(isOnline(getApplicationContext())){
+                //Continua...Aquí puedes agregar el intent a MainActivity.
+                try {
+                    Transport.send(messages[0]);
+                    sinEternet="SI";
+                    return "OK";
+                } catch (MessagingException e) {
+                    e.printStackTrace();
+                    sinEternet="EMAIL";
+                }
+
+            }else{
+                sinEternet="NO";
             }
-            return null;
+
+            return "NA";
         }
 
         protected void onPostExecute(String s){
             progressDialog.dismiss();
-            super.onPostExecute(s);
-            if(s.equals("EMAIL ENVIADO")) {
+            if(sinEternet == "SI"){
+                progressDialog.dismiss();
                 Toast.makeText(getApplicationContext(),"EMAIL ENVIADO",Toast.LENGTH_LONG).show();
+            }
+            else if (sinEternet=="EMAIL")
+            {
+                progressDialog.dismiss();
+                alerta("Problema al enviar el Email, intente mas tarde...");
             }
             else
             {
-                AlertDialog.Builder builder = new AlertDialog.Builder((olvidadocontrasena.this));
-                builder.setCancelable(false);
-                builder.setTitle("ERROR");
-                builder.setMessage("PROBLEMAS PARA ENVIAR EL EMAIL");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int i) {
-                        dialog.dismiss();
-                        correo.setText("");
-                    }
-                });
-                builder.show();
+                alerta("No existe conexión a Internet, intente mas tarde...");
             }
-            //
         }
+    }
+
+    public static boolean isOnline(Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        if (connectivityManager != null) {
+            NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.getActiveNetwork());
+            if (capabilities != null) {
+                if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
+                    Log.i(TAG, "NetworkCapabilities.TRANSPORT_CELLULAR");
+                    return true;
+                } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+                    Log.i(TAG, "NetworkCapabilities.TRANSPORT_WIFI");
+                    return true;
+                }  else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)){
+                    Log.i(TAG, "NetworkCapabilities.TRANSPORT_ETHERNET");
+                    return true;
+                }
+            }
+        }
+
+        return false;
+
     }
 }
 
