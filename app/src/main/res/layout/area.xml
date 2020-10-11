@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/LL">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text=""
+        android:textStyle="bold"
+        android:textColor="#111111"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <FrameLayout
+        android:id="@+id/firmasview"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/textVie3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_gravity="right"
+            android:rotation="-90"
+            android:text="DIBUJAR FIRMA"
+            android:textColor="#000000"
+            android:textSize="15dp" />
+
+    </FrameLayout>
+
+    <ScrollView
+
+        android:id="@+id/scrollView7"
+        android:layout_width="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_height="588dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="EQUIPO MEDICO" />
+
+                <ScrollView
+                    android:id="@+id/scrollView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/button8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MONITOR SIGNOS VITALES"
+                            app:srcCompat="@android:drawable/ic_menu_manage"/>
+
+                        <Button
+                            android:id="@+id/button9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="DESFIBRILADOR" />
+
+                        <Button
+                            android:id="@+id/button17"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=" VENTILADOR MECANICO" />
+
+                        <Button
+                            android:id="@+id/button10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MAQUINA DE ANESTECIA" />
+
+                        <Button
+                            android:id="@+id/button11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ELECTROCARDIOGRAFO" />
+
+                        <Button
+                            android:id="@+id/button12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="INCUBADORA" />
+
+                        <Button
+                            android:id="@+id/button13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="LAMPARA" />
+
+                        <Button
+                            android:id="@+id/button14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ARCO EN C" />
+
+                        <Button
+                            android:id="@+id/button15"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ELECTROCAUTERIO" />
+
+                        <Button
+                            android:id="@+id/button16"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="POLIGRAFO" />
+
+                        <Button
+                            android:id="@+id/button18"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="CUNA CALOR RADIANTE" />
+
+                        <Button
+                            android:id="@+id/button21"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ULTRASONIDO" />
+
+                        <Button
+                            android:id="@+id/button22"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TORRE ENDOSCOPIA" />
+
+                        <Button
+                            android:id="@+id/button25"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TORRE LAPAROSCOPIA" />
+
+                        <Button
+                            android:id="@+id/button26"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="BOMBA DE INFUSION" />
+
+                        <Button
+                            android:id="@+id/button27"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MICROSCOPIO QUIRURGICO" />
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/switch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INSTRUMENTAL MEDICO" />
+
+                <ScrollView
+                    android:id="@+id/scrollView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/button30"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="BASCULA" />
+
+                        <Button
+                            android:id="@+id/button31"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="BISUTURI ARMONICO" />
+
+                        <Button
+                            android:id="@+id/button32"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="EXTRACTOR DE SEÑAL" />
+
+                        <Button
+                            android:id="@+id/button33"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="GLUCOMETRO" />
+
+                        <Button
+                            android:id="@+id/button41"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="LARINGOSCOPIO" />
+
+                        <Button
+                            android:id="@+id/button34"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="HOJAS LARINGOSCOPIO" />
+
+                        <Button
+                            android:id="@+id/button35"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MONITOR FETAL" />
+
+                        <Button
+                            android:id="@+id/button36"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="NEGATOSCOPIO" />
+
+                        <Button
+                            android:id="@+id/button37"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="OCTALMOSCOPIO" />
+
+                        <Button
+                            android:id="@+id/button38"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="OTOSCOPIO" />
+
+                        <Button
+                            android:id="@+id/button39"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="OXIMETRO" />
+
+                        <Button
+                            android:id="@+id/button40"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="VIDEOLARINGO" />
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/switch4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INMOBILIARIO MEDICO" />
+
+                <ScrollView
+                    android:id="@+id/scrollView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/button28"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ALMACEN PREVACIO" />
+
+                        <Button
+                            android:id="@+id/button42"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="BANDA DE ESFUERZO" />
+
+                        <Button
+                            android:id="@+id/button43"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="BAUMANOMETRO DE PARED" />
+
+                        <Button
+                            android:id="@+id/button44"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="CAMA HOSPITALARIA / GINE" />
+
+                        <Button
+                            android:id="@+id/button45"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="CAMILLA DE TRASLADO" />
+
+                        <Button
+                            android:id="@+id/button46"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="CARRO DE PARO" />
+
+                        <Button
+                            android:id="@+id/button47"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="CUNA" />
+
+                        <Button
+                            android:id="@+id/button48"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="IMPRESORA" />
+
+                        <Button
+                            android:id="@+id/button49"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MESA QUIRURGICA" />
+
+                        <Button
+                            android:id="@+id/button50"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MODULO DE GASES Y AC" />
+
+                        <Button
+                            android:id="@+id/button51"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="SELLADOR DE BOLSAS" />
+
+                    </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/switch5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EQUIPO ESPECIALIZADO" />
+
+                <ScrollView
+                    android:id="@+id/scrollView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/button29"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ASISTENTE DE RESPIRACION" />
+
+                        <Button
+                            android:id="@+id/button53"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="AUTOCLAVE" />
+
+                        <Button
+                            android:id="@+id/button54"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="CALENTADOR DE BIBERONES" />
+
+                        <Button
+                            android:id="@+id/button55"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="DESOBSTRURADOR VIAS AEREAS" />
+
+                        <Button
+                            android:id="@+id/button56"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ESTERILIZADOR ELECTRICO" />
+
+                        <Button
+                            android:id="@+id/button57"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="INYECTOR DE CONTRASTE" />
+
+                        <Button
+                            android:id="@+id/button58"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="LAVADORA TERMODESINFECTADORA" />
+
+                        <Button
+                            android:id="@+id/button59"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="MAQUINA LIPOSUCION" />
+
+                        <Button
+                            android:id="@+id/button60"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="TORNIQUETE NEUMATICO" />
+                    </LinearLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/button20"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/firmz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/button19"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toEndOf="@+id/button20"
+        app:srcCompat="@drawable/borrar" />
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/pdf" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
