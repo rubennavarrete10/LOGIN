@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context=".MainActivity">
 
 
@@ -35,62 +36,100 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="322dp"
+        android:layout_height="429dp"
         android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
         android:layout_marginRight="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.213">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/button2"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="URGENCIAS" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="UCI" />
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="160dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/itemborder"
+                    android:text="ENDOSCOPIA" />
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="QUIROFANO" />
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="160dp"
+                    android:background="@drawable/itemborder"
+                    android:layout_height="match_parent"
+                    android:text="UCIN" />
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/button5"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="RECUPERACION" />
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="ENDOSCOPIA" />
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="160dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/itemborder"
+                    android:text="URGENCIAS" />
 
-            <Button
-                android:id="@+id/button7"
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="160dp"
+                    android:background="@drawable/itemborder"
+                    android:layout_height="match_parent"
+                    android:text="UCI" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="UCIN" />
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="160dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/itemborder"
+                    android:text="RECUPERACION" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/itemborder"
+                    android:text="QUIROFANO" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/button23"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/itemborder"
                 android:text="HEMODINAMIA" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="TextView" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="TextView" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -104,6 +143,7 @@
                     android:layout_weight="1"
                     android:ems="10"
                     android:hint="ESCRIBE OTRA AREA"
+
                     android:inputType="textPersonName"
                     android:textSize="15dp" />
 
@@ -121,17 +161,38 @@
 
             </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="5dp"
-                android:background="@android:color/transparent"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/config" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="TextView" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="TextView" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="TextView" />
 
         </LinearLayout>
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="52dp"
+        android:layout_height="45dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        app:srcCompat="@drawable/config" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

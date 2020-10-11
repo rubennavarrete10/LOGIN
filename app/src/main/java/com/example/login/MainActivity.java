@@ -55,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String SHARED_PREFSl = "sharedPrefsL";
     private static final String TAG ="";
     private boolean presionado;
-    String push="#2DCCD3";
+    //String push="#2DCCD3";
+    String push = "#ffffff";
     String area = "";
     Timer tiempo=new Timer();
     String resultado = "";
@@ -97,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
         final Button HEMODINAMIA = (Button) findViewById(R.id.button23);
         final Drawable d = URGENCIAS.getBackground();
         final ImageButton imageb = (ImageButton)findViewById(R.id.imageButton);
+
+
         imageb.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {

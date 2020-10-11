@@ -92,96 +92,112 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="MONITOR SIGNOS VITALES"
+                            android:background="@drawable/itemborder2"
                             app:srcCompat="@android:drawable/ic_menu_manage"/>
 
                         <Button
                             android:id="@+id/button9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="DESFIBRILADOR" />
 
                         <Button
                             android:id="@+id/button17"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text=" VENTILADOR MECANICO" />
 
                         <Button
                             android:id="@+id/button10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="MAQUINA DE ANESTECIA" />
 
                         <Button
                             android:id="@+id/button11"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="ELECTROCARDIOGRAFO" />
 
                         <Button
                             android:id="@+id/button12"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="INCUBADORA" />
 
                         <Button
                             android:id="@+id/button13"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="LAMPARA" />
 
                         <Button
                             android:id="@+id/button14"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="ARCO EN C" />
 
                         <Button
                             android:id="@+id/button15"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="ELECTROCAUTERIO" />
 
                         <Button
                             android:id="@+id/button16"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="POLIGRAFO" />
 
                         <Button
                             android:id="@+id/button18"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="CUNA CALOR RADIANTE" />
 
                         <Button
                             android:id="@+id/button21"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="ULTRASONIDO" />
 
                         <Button
                             android:id="@+id/button22"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="TORRE ENDOSCOPIA" />
 
                         <Button
                             android:id="@+id/button25"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="TORRE LAPAROSCOPIA" />
 
                         <Button
                             android:id="@+id/button26"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="BOMBA DE INFUSION" />
 
                         <Button
                             android:id="@+id/button27"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="MICROSCOPIO QUIRURGICO" />
 
                     </LinearLayout>
@@ -216,72 +232,84 @@
                             android:id="@+id/button30"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="BASCULA" />
 
                         <Button
                             android:id="@+id/button31"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="BISUTURI ARMONICO" />
 
                         <Button
                             android:id="@+id/button32"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="EXTRACTOR DE SEÑAL" />
 
                         <Button
                             android:id="@+id/button33"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="GLUCOMETRO" />
 
                         <Button
                             android:id="@+id/button41"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="LARINGOSCOPIO" />
 
                         <Button
                             android:id="@+id/button34"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="HOJAS LARINGOSCOPIO" />
 
                         <Button
                             android:id="@+id/button35"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="MONITOR FETAL" />
 
                         <Button
                             android:id="@+id/button36"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="NEGATOSCOPIO" />
 
                         <Button
                             android:id="@+id/button37"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="OCTALMOSCOPIO" />
 
                         <Button
                             android:id="@+id/button38"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="OTOSCOPIO" />
 
                         <Button
                             android:id="@+id/button39"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="OXIMETRO" />
 
                         <Button
                             android:id="@+id/button40"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="VIDEOLARINGO" />
 
                     </LinearLayout>
@@ -316,66 +344,77 @@
                             android:id="@+id/button28"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="ALMACEN PREVACIO" />
 
                         <Button
                             android:id="@+id/button42"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="BANDA DE ESFUERZO" />
 
                         <Button
                             android:id="@+id/button43"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="BAUMANOMETRO DE PARED" />
 
                         <Button
                             android:id="@+id/button44"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="CAMA HOSPITALARIA / GINE" />
 
                         <Button
                             android:id="@+id/button45"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="CAMILLA DE TRASLADO" />
 
                         <Button
                             android:id="@+id/button46"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="CARRO DE PARO" />
 
                         <Button
                             android:id="@+id/button47"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="CUNA" />
 
                         <Button
                             android:id="@+id/button48"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="IMPRESORA" />
 
                         <Button
                             android:id="@+id/button49"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="MESA QUIRURGICA" />
 
                         <Button
                             android:id="@+id/button50"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="MODULO DE GASES Y AC" />
 
                         <Button
                             android:id="@+id/button51"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="SELLADOR DE BOLSAS" />
 
                     </LinearLayout>
@@ -410,54 +449,63 @@
                             android:id="@+id/button29"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="ASISTENTE DE RESPIRACION" />
 
                         <Button
                             android:id="@+id/button53"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="AUTOCLAVE" />
 
                         <Button
                             android:id="@+id/button54"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="CALENTADOR DE BIBERONES" />
 
                         <Button
                             android:id="@+id/button55"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="DESOBSTRURADOR VIAS AEREAS" />
 
                         <Button
                             android:id="@+id/button56"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="ESTERILIZADOR ELECTRICO" />
 
                         <Button
                             android:id="@+id/button57"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="INYECTOR DE CONTRASTE" />
 
                         <Button
                             android:id="@+id/button58"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="LAVADORA TERMODESINFECTADORA" />
 
                         <Button
                             android:id="@+id/button59"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="MAQUINA LIPOSUCION" />
 
                         <Button
                             android:id="@+id/button60"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/itemborder2"
                             android:text="TORNIQUETE NEUMATICO" />
                     </LinearLayout>
                 </ScrollView>
